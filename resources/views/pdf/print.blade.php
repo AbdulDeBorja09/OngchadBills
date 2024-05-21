@@ -62,10 +62,10 @@
             );
             $previous_month = date('F', strtotime($previous_month_date));
             $selectedData->last_month = $previous_month;
-            $duedate = $selectedData->month;
-            $carbonDate = \Carbon\Carbon::parse($duedate);
-            $due = $carbonDate->format('F d Y');
 
+            $sqlDate = $selectedData->due;
+            $carbonDate = \Carbon\Carbon::parse($sqlDate);
+            $due = $carbonDate->format('F d Y');
             $totalkwh = abs($selectedData->latest_reading - $selectedData->last_reading);
 
         @endphp
