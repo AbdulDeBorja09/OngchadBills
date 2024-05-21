@@ -70,6 +70,8 @@
                 $duedate = $item->month;
                 $carbonDate = \Carbon\Carbon::parse($duedate);
                 $due = $carbonDate->format('F d Y');
+
+                $totalkwh = abs($item->latest_reading - $item->last_reading);
             @endphp
             <table class="printtable">
                 <tr>
@@ -90,8 +92,8 @@
                                 <td>{{ $previous_month }}</td>
                                 <td>&nbsp; {{ $item->last_reading }}</td>
                                 <td style=" border-left:1px solid black;">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp; {{ $item->latest_reading - $item->last_reading }}
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp; {{ $totalkwh }}
                                 </td>
                             </tr>
                             <tr>
@@ -106,7 +108,7 @@
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ $item->latest_reading - $item->last_reading }}</td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;{{ $totalkwh }}</td>
                                 <td>{{ $item->total }}</td>
                             </tr>
                         </table>

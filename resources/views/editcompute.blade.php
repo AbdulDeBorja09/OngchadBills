@@ -19,6 +19,7 @@
                         <option value="Apartment 3">Apartment 3</option> --}}
                     </select>
                     @php
+                        $totalkwh = abs($edit->latest_reading - $edit->last_reading);
                         $numonth = $edit->month;
                     @endphp
                     <select name="month" required disabled>
@@ -27,7 +28,7 @@
                         <option value="2">february</option>
                         <option value="3">march</option>
                         <option value="4">april</option>
-                        <option value="5">may</option>
+                        <option value="5">may</option>s
                         <option value="6">june</option>
                         <option value="7">july</option>
                         <option value="8">august</option>
@@ -79,12 +80,12 @@
                             </div>
                         </div>
                         <div class="result">
-                            {{ $edit->latest_reading - $edit->last_reading }}
+                            {{$totalkwh }}
                         </div>
                     </div>
                     <div>
                         <div class="cpt-right ">
-                            <h4>{{ $edit->latest_reading - $edit->last_reading }}</h4>
+                            <h4>{{ $totalkwh}}</h4>
                             <h4>KWH x {{ $edit->kwh }}</h4>
                         </div>
                         <div class="result">{{ $edit->total }}</div>

@@ -55,6 +55,7 @@
                             }
                             $searchstatus = $result;
                             $monthName = date('F', mktime(0, 0, 0, $lastmonth, 1));
+                            $totalkwh = abs($item->latest_reading - $item->last_reading);
                         @endphp
                         <section class="details-section d-flex">
                             <div class="main-details ">
@@ -75,15 +76,15 @@
                                         </div>
                                     </div>
                                     <div class="result">
-                                        {{ $item->latest_reading - $item->last_reading }}
+                                        {{ $totalkwh}}
                                     </div>
                                 </div>
                                 <div class="second-div">
                                     <div class="cpt-right ">
-                                        <h4>{{ $item->latest_reading - $item->last_reading }}</h4>
+                                        <h4>{{ $totalkwh}}</h4>
                                         <h4>KWH x {{ $item->kwh }}</h4>
                                     </div>
-                                    <div class="result">{{ ($item->latest_reading - $item->last_reading) * $item->kwh }}
+                                    <div class="result">{{ $item->total }}
                                     </div>
                                 </div>
                             </div>

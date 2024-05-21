@@ -57,6 +57,9 @@
                 <h2>KWH: {{ $latest->kwh }}</h2>
                 <h1 class="cpt">COMPUTATION</h1>
                 <h3 class="rdng">readings:</h3>
+                @php
+                    $totalkwh = abs($latest->latest_reading - $latest->last_reading);
+                @endphp
                 <div class="computation-details d-flex">
                     <div class="first-div">
                         <div class="cpt-left d-flex">
@@ -71,12 +74,12 @@
                             </div>
                         </div>
                         <div class="result">
-                            {{ $latest->latest_reading - $latest->last_reading }}
+                            {{ $totalkwh }}
                         </div>
                     </div>
                     <div>
                         <div class="cpt-right ">
-                            <h4>{{ $latest->latest_reading - $latest->last_reading }}</h4>
+                            <h4> {{ $totalkwh }}</h4>
                             <h4>KWH x {{ $latest->kwh }}</h4>
                         </div>
                         <div class="result">{{ $latest->total }}</div>

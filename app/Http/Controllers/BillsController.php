@@ -124,15 +124,6 @@ class BillsController extends Controller
         Compute::where('id', $id)->delete();
         return view('apartment', compact('result'));
     }
-    public function pendingstatus($id)
-    {
-        $history = Compute::where('id', $id)->get();
-        $result = true;
-        Compute::where('id', $id)->update([
-            'status' => 'pending',
-        ]);
-        return view('apartment', compact('history', 'result'));
-    }
     public function apartment()
     {
         $result = false;
@@ -200,8 +191,8 @@ class BillsController extends Controller
         $kwh = $request->input('kwh');
         $R1 = $request->input('R1');
         $R2 = $request->input('R2');
-        $difference = $R2 - $R1;
-        $total = $difference * $kwh;
+        $difference = abs($R2 - $R1);
+        $total = abs($difference * $kwh);
         Compute::where('id', $id)->update([
             'bill' => $bill,
             'due' => $due,
@@ -233,8 +224,8 @@ class BillsController extends Controller
         $kwh = $request->input('kwh');
         $R1 = $request->input('R1');
         $R2 = $request->input('R2');
-        $difference = $R2 - $R1;
-        $total = $difference * $kwh;
+        $difference = abs($R2 - $R1);
+        $total = abs($difference * $kwh);
 
         $existingBill = Compute::where('name', $name)->where('month', $month)->first();
         if ($existingBill) {
