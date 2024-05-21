@@ -76,12 +76,12 @@
                                         </div>
                                     </div>
                                     <div class="result">
-                                        {{ $totalkwh}}
+                                        {{ $totalkwh }}
                                     </div>
                                 </div>
                                 <div class="second-div">
                                     <div class="cpt-right ">
-                                        <h4>{{ $totalkwh}}</h4>
+                                        <h4>{{ $totalkwh }}</h4>
                                         <h4>KWH x {{ $item->kwh }}</h4>
                                     </div>
                                     <div class="result">{{ $item->total }}
@@ -101,7 +101,7 @@
                         </section>
                         <section class="status">
                             <h6>status: {{ $item->status }}</h6>
-                            <h5>{{ $item->due }}</h5>
+                            <h5>{{ $item->updated }}</h5>
                         </section>
                     @endforeach
                 @endif

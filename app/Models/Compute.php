@@ -20,6 +20,7 @@ class Compute extends Model
         'last_reading',
         'latest_reading',
         'total',
+        'updated',
     ];
     public $timestamps = false;
 }

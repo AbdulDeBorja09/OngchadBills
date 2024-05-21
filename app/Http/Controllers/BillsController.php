@@ -193,6 +193,8 @@ class BillsController extends Controller
         $R2 = $request->input('R2');
         $difference = abs($R2 - $R1);
         $total = abs($difference * $kwh);
+        $now = date('F m Y');
+
         Compute::where('id', $id)->update([
             'bill' => $bill,
             'due' => $due,
@@ -200,6 +202,7 @@ class BillsController extends Controller
             'last_reading' => $R1,
             'latest_reading' => $R2,
             'total' => $total,
+            'updated' => $now,
         ]);
         return redirect()->route('editcompute', compact('id'))->with('success', __('validation.editsucces'));
     }
@@ -226,7 +229,7 @@ class BillsController extends Controller
         $R2 = $request->input('R2');
         $difference = abs($R2 - $R1);
         $total = abs($difference * $kwh);
-
+        $now = date('F d Y');
         $existingBill = Compute::where('name', $name)->where('month', $month)->first();
         if ($existingBill) {
             return redirect()->back()->with('error',  __('validation.computeerror'));
@@ -241,6 +244,7 @@ class BillsController extends Controller
                 'last_reading' => $R1,
                 'latest_reading' => $R2,
                 'total' => $total,
+                'updated' => $now,
             ]);
             return redirect()->route('computation')->with('success', __('validation.computesucess'));
         }
