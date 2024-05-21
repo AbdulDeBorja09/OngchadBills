@@ -1,0 +1,833 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.main {
+    background-image: url(../images/background.png);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 100px 80px 100px;
+}
+.nav-item{
+    display: flex;
+    flex-direction: row; 
+}
+.home-btn{
+    font-size: 25px;
+}
+.nav-link{
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+}
+.page-title{
+    margin: -70px 140px 40px 95px;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    
+}
+.home-container{
+    margin: 0px 100px;
+    color: white;
+    display: flex;
+    text-transform: uppercase;
+}
+.home-container h3{
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 0px 100px 50px 0px;
+}
+.home-container .left,.home-container .right {
+    width: 50%;
+}
+
+.home-container .left .box{
+    margin: 0px 0px 70px 45px;
+}
+
+.home-container .left .box h1{
+    font-size: 20px;
+    font-weight:400;
+    margin-bottom: 10px;
+}
+.home-container .left .box h2{
+    font-size: 20px;
+    font-weight:400;
+    margin-left: 47px;
+    margin-bottom: 10px;
+}
+
+.home-container .left .box .cta {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 145px;
+    text-decoration: none;
+}
+
+.home-container .left .box .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 12px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  
+.home-container .left .box .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.home-container .left .box .cta:hover svg {
+    transform: translateX(0);
+    color: white;
+}
+
+.home-container .left .box .cta:active svg {
+    transform: scale(0.9);
+    color: white;
+}
+
+.home-container .left .box .hover-underline-animation {
+    position: relative;
+    color: white;
+    padding-bottom: 20px;
+}
+.home-container .left .box .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.home-container .left .box .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.home-container .right .startbtn{
+    position: absolute;
+    margin-top: 650px;
+    margin-left: 440px;
+}
+
+.home-container .right .startbtn a{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 60px ;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 25px;
+    
+}
+.computation-div{
+    margin: 0px 140px;
+    display: flex;
+}
+.computation-div .left,
+.computation-div .right{
+    width: 50%;
+}
+.computation-div .left .upper{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.computation-div .left .upper  select option{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+    
+}
+.computation-div .left .upper input,
+.computation-div .left .upper select{
+    background-color: rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    padding: 0px 12px;
+    border: 0;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+}
+.computation-div .left .lower{
+    display: flex;
+    flex-direction: column;
+}
+.computation-div .left .lower h1{
+    color: white;
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    margin: 30px 0px 40px 0px;
+    width: 175px;
+}
+.computation-div .left .lower input{
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0px 12px;
+    border: 0;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 12px;
+    width: 20%;
+    text-align: center;
+
+}
+.computation-div .left input::placeholder{
+    color: white;
+}
+
+.computation-div .submit{
+    background:none;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    padding-left: 30px;
+    margin-top: 10px;
+}
+.computation-div .right{
+    padding: 50px;
+    margin-left:180px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.computation-div .right .apt{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+
+}
+.computation-div .right h2{
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 25px;
+    
+}
+.computation-div .right .cpt{
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.computation-div .right .rdng{
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 25px;
+}
+.computation-details{
+    margin-left: 25px;
+    
+}
+.computation-details .first-div{
+    width: 23%;
+
+}
+
+.computation-details .cpt-left {
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+.computation-details .cpt-left .readings{
+    text-align: end;
+}
+
+.computation-details .cpt-right{
+    justify-content: end;
+    text-align: end;
+    border-bottom: 1px solid white;
+    margin-left: 50px;
+}
+
+.computation-details h4{
+    font-size: 12px;
+    margin-top: 5px;
+}
+.computation-details .result{
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: end;
+}
+.computation-div .right h5{
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 50px;
+}
+.computation-div .right h6{
+    font-size: 13px;
+    font-weight: 700;
+}
+.compute-alert{
+    width: 50%;
+    margin-top: 30px ;
+    padding: 10px;
+    font-size: 13px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-style: italic;
+}
+.computation-buttons{
+    margin: 230px 140px 0px 140px;
+    display: flex;
+    justify-content: end;
+}
+.computation-buttons .edit,
+.computation-buttons .print{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-left: 40px;
+    font-size: 13px;
+    border-radius: 7px;
+    padding: 5px 40px;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+.payments-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 210px 0px 210px;
+}
+.payments-container h1{
+    font-size: 20px;
+    color: white;
+    margin-bottom: 40px;
+    font-weight: 400;
+
+}
+.payments-container h2{
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.payments-container h3{
+    font-size: 17px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.payments-container .cta {
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.payments-container .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 12px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  
+  .payments-container .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.payments-container  .cta:hover svg {
+    transform: translateX(0);
+    color: white;
+}
+
+.payments-container .cta:active svg {
+    transform: scale(0.9);
+    color: white;
+}
+
+.payments-container .hover-underline-animation {
+    position: relative;
+    color: white;
+    padding-bottom: 20px;
+}
+.payments-container .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.payments-container .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.submeter-container{
+    margin: 0px 140px;
+
+}
+.submeter-container h1{
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.submeter-container input,
+.submeter-container select{
+    background-color: rgba(255, 255, 255, 0.247);
+    text-transform: uppercase;
+    padding: 0px 12px;
+    border: 0;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 12px;
+    width: 10%;
+}
+.submeter-container option{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+}
+
+.submeter-container button{
+     background-color: transparent;
+     color: white;
+     font-size: 13px;
+     margin-bottom: 20px;
+}
+.submeter-container h6{
+    color: white;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.history-container{
+    margin: 0px 140px;    
+}
+.history-container h1{
+    font-size: 20px;
+    color: white;
+    width: fit-content;
+    border-bottom: 1px solid white;
+    font-weight: 500;
+}
+.history-container .left{
+    width: 50%;
+}
+.history-container .main-details{
+    margin-top: 30px;
+    width: 40%;
+}
+.history-container  .main-details h2{
+    font-size: 13px;
+    color: white;
+    margin-bottom: 10px;
+}
+.history-container .computation-detail{
+    color: white;
+    width: 50%;
+    margin-top: 30px;
+
+}
+.history-container .computation-detail h4{
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.history-container .computation-detail .cpt-left{
+    display: flex;
+    justify-content: space-between;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 0px 15px 3px 15px;
+
+}
+.history-container .computation-detail .cpt-left .readings{
+    text-align: end;
+}
+
+.history-container .computation-detail .cpt-right{
+    justify-content: end;
+    text-align: end;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 0px 15px 3px 15px;
+    width: fit-content;
+}
+.history-container .computation-detail .first-div{
+    width: 50%;
+}
+.history-container .computation-detail .result{
+    text-align: end;
+    border-left: 1px solid white;
+    padding: 1px 15px 0px 15px;
+    font-size: 13px;
+   
+}
+.history-container input,
+.history-container select{
+    background-color: rgba(255, 255, 255, 0.247);
+    text-transform: uppercase;
+    padding: 0px 12px;
+    border: 0;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 12px;
+    width: 20%;
+}
+.history-container option{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+}
+.history-container button{
+    background-color: transparent;
+    color: white;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+.history-container .readings h6{
+    font-size: 13px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 12px;
+
+}
+.history-container .readings h1{
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.history-container .total h1{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.history-container .total h6{
+    font-size: 13px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.history-container .status{
+    margin-top: 30px
+}
+
+.history-container .status h6{
+    font-size: 13px;
+    color: white;
+    font-weight: 400;
+}
+.history-container .status h5{
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+}
+.history-container .right button{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-left: 40px;
+    font-size: 13px;
+    border-radius: 7px;
+    padding: 5px 40px;
+}
+.history-container .right{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.historyerror p{
+    color: white;
+    font-size: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    font-style: italic;
+    width: 30%;
+}
+.submerteralert p{
+    color: white;
+    font-size: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    font-style: italic;
+    width: 15%;
+}
+
+.apartment-container{
+    margin: 0px 140px;
+    display: flex;
+}
+.apartment-container .left,
+.apartment-container .right{
+    width: 50%
+}
+
+.apartment-container input,
+.apartment-container select{
+    background-color: rgba(255, 255, 255, 0.247);
+    text-transform: uppercase;
+    padding: 0px 12px;
+    border: 0;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 12px;
+    width: 20%;
+}
+.apartment-container option{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+}
+.apartment-container button{
+    background-color: transparent;
+    color: white;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+.apartment-container .readings h6{
+    font-size: 13px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+.apartment-container .readings h1{
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.apartment-container .total h1{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.apartment-container .total h6{
+    font-size: 13px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.apartment-container .status{
+    margin-top: 30px
+}
+
+.apartment-container .status h6{
+    font-size: 13px;
+    color: white;
+    font-weight: 400;
+}
+.apartment-container .status h5{
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+}
+.apartment-container .right button{
+    color: white;
+}
+.apartment-container .right .actionbuttons{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+   
+}
+.apartment-container .right .actionbuttons .edit{
+    margin-top: -20px;
+}
+.apartment-container .right .actionbuttons .printbtn{
+
+    margin-top:570px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.185);
+    
+}
+.apartment-container h1{
+    font-size: 20px;
+    color: white;
+    width: fit-content;
+    border-bottom: 1px solid white;
+    font-weight: 500;
+
+}
+.apartment-container .left{
+    width: 50%;
+}
+.apartment-container .main-details{
+    margin-top: 30px;
+    width: 40%;
+}
+.apartment-container  .main-details h2{
+    font-size: 13px;
+    color: white;
+    margin-bottom: 10px;
+}
+.apartment-container .computation-detail{
+    color: white;
+    width: 50%;
+    margin-top: 30px;
+
+
+}
+.apartment-container .computation-detail h4{
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.apartment-container .computation-detail .cpt-left{
+    display: flex;
+    justify-content: space-between;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    text-align: end;
+    padding: 0px 15px 3px 15px;
+    
+}
+
+.apartment-container .computation-detail .cpt-right{
+    justify-content: end;
+    text-align: end;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 0px 15px 3px 15px;
+    width: fit-content;
+}
+.apartment-container .computation-detail .cpt-left .readings{
+    text-align: end;
+}
+.apartment-container .computation-detail .first-div{
+    width: 50%;
+    
+}
+.apartment-container .computation-detail .result{
+    text-align: end;
+    border-left: 1px solid white;
+    padding: 1px 15px 0px 15px;
+    font-size: 13px;
+   
+}
+.apartment-container .readings h6{
+    font-size: 13px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+.apartment-container .readings h1{
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.apartment-container .total h1{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.apartment-container .change-sts-btn{
+    display: flex;
+    text-transform: uppercase;
+    background-color: transparent;
+    margin-top: 15px;
+}
+.apartment-container .change-sts-btn button{
+    background-color: transparent;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.281);
+    padding: 5px 0px;
+    margin-right: 20px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.backbtn{
+    background-color: transparent;
+    margin-right: 10px;
+}
+.errorpage{
+    position: relative;
+    
+    height: 100vh;
+}
+.errorpage .main{
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+.errorpage .main h1{
+    font-weight: 700;
+    color: white;
+}
+.errorpage .main a{
+    background-color: rgba(20, 20, 20, 0.712);
+    font-weight: 700;
+    color: white;
+    border-radius: 3px;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 3px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.printingdiv{
+    margin: 0px 140px;
+    
+}
+.printingdiv label{
+    color: white;
+    font-size: 15px;
+    margin-bottom: 20px;
+    
+}
+.printingdiv input[type="checkbox"]{
+    border-radius: 3px;
+    border: 2px solid white;
+}
+.printingdiv button{
+    background-color: rgba(250, 250, 250, 0.116);
+    color: white;
+    padding: 3px 50px;
+    border-radius: 3px;
+}
+.printerror{
+    background-color: rgba(250, 250, 250, 0.253);
+    color: white;
+    border-radius: 3px;
+    font-style: italic;
+    width: fit-content;
+    padding: 10px 10px;
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 500;
+
+}
+
+@media screen and (max-width: 766px){
+    .home-btn{
+        display: none;
+    }
+}
