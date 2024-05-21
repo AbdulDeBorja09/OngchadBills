@@ -34,7 +34,7 @@ class PDFController extends Controller
     public function soloprint($id)
     {
         $selectedData  = Compute::where('id', $id)->first();
-        if (empty($selectedApartments)) {
+        if (empty($selectedData)) {
             return view('error.404');
         }
 
