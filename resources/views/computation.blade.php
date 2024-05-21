@@ -49,17 +49,21 @@
         </form>
         @if (!$latest)
         @else{
+            @php
+                $sqlDate = $latest->due;
+                $carbonDate = \Carbon\Carbon::parse($sqlDate);
+                $due = $carbonDate->format('F d Y');
+                $totalkwh = abs($latest->latest_reading - $latest->last_reading);
+            @endphp
             <div class="right text-white">
                 <h1 class="apt">{{ $latest->name }}</h1>
                 <h2>Month: {{ $latest->month }}</h2>
                 <h2>bill: {{ $latest->bill }}</h2>
-                <h2>Due: {{ $latest->due }}</h2>
+                <h2>Due: {{ $due }}</h2>
                 <h2>KWH: {{ $latest->kwh }}</h2>
                 <h1 class="cpt">COMPUTATION</h1>
                 <h3 class="rdng">readings:</h3>
-                @php
-                    $totalkwh = abs($latest->latest_reading - $latest->last_reading);
-                @endphp
+
                 <div class="computation-details d-flex">
                     <div class="first-div">
                         <div class="cpt-left d-flex">

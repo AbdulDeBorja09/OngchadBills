@@ -56,12 +56,16 @@
                             $searchstatus = $result;
                             $monthName = date('F', mktime(0, 0, 0, $lastmonth, 1));
                             $totalkwh = abs($item->latest_reading - $item->last_reading);
+
+                            $sqlDate = $item->due;
+                            $carbonDate = \Carbon\Carbon::parse($sqlDate);
+                            $due = $carbonDate->format('F d Y');
                         @endphp
                         <section class="details-section d-flex">
                             <div class="main-details ">
                                 <h2>BILL: {{ $item->bill }}</h2>
                                 <h2>KWH: {{ $item->kwh }}</h2>
-                                <h2>DUE DATE: {{ $item->due }}</h2>
+                                <h2>DUE DATE: {{ $due }}</h2>
                             </div>
                             <div class="computation-detail d-flex">
                                 <div class="first-div">

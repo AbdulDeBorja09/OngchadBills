@@ -59,10 +59,15 @@
             </form>
 
             <div class="right text-white">
+                @php
+                    $sqlDate = $edit->due;
+                    $carbonDate = \Carbon\Carbon::parse($sqlDate);
+                    $due = $carbonDate->format('F d Y');
+                @endphp
                 <h1 class="apt">{{ $edit->name }}</h1>
                 <h2>Month: {{ $edit->month }}</h2>
                 <h2>bill: {{ $edit->bill }}</h2>
-                <h2>Due: {{ $edit->due }}</h2>
+                <h2>Due: {{ $due }}</h2>
                 <h2>KWH: {{ $edit->kwh }}</h2>
                 <h1 class="cpt">COMPUTATION</h1>
                 <h3 class="rdng">readings:</h3>
@@ -80,12 +85,12 @@
                             </div>
                         </div>
                         <div class="result">
-                            {{$totalkwh }}
+                            {{ $totalkwh }}
                         </div>
                     </div>
                     <div>
                         <div class="cpt-right ">
-                            <h4>{{ $totalkwh}}</h4>
+                            <h4>{{ $totalkwh }}</h4>
                             <h4>KWH x {{ $edit->kwh }}</h4>
                         </div>
                         <div class="result">{{ $edit->total }}</div>
