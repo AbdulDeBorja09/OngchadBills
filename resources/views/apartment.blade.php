@@ -123,12 +123,10 @@
         @if ($searchstatus == true)
             <div class="right">
                 <div class="actionbuttons">
-                    <form action="{{ route('delete', ['id' => $item->id]) }}" method="POST">
-                        @csrf
-                        @method('post')
-                        <button class="dlt">DELETE COMPUTATION <i class="fa-solid fa-trash"
-                                style="color: #ffffff;"></i></button>
-                    </form>
+
+                    <button class="dlt" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">DELETE
+                        COMPUTATION <i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+
                     <form action="{{ route('editcompute', ['id' => $item->id]) }}" method="POST">
                         @csrf
                         @method('post')
@@ -142,7 +140,26 @@
                     </form>
 
                 </div>
-
+            </div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="confirmation modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <form action="{{ route('delete', ['id' => $item->id]) }}" method="POST">
+                                @csrf
+                                @method('post')
+                                <span>Are you sure you want to delete?</span>
+                                <div class="buttons">
+                                    <button type="reset" class="buton" data-bs-dismiss="modal">CLOSE</button>
+                                    <button href="{{ route('delete', ['id' => $item->id]) }}" type="submit"
+                                        class="confirm delete"> <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                                        DELETE</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         @endif
     </section>

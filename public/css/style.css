@@ -814,7 +814,7 @@
     border-radius: 3px;
 }
 .printerror{
-    background-color: rgba(250, 250, 250, 0.253);
+    background-color: rgba(250, 250, 250, 0.425);
     color: white;
     border-radius: 3px;
     font-style: italic;
@@ -824,6 +824,31 @@
     font-size: 13px;
     font-weight: 500;
 
+}
+.confirmation .modal-body{
+    
+    height:150px;
+}
+.modal-content{
+    background-color: rgba(0, 0, 0, 0.74);
+}
+.confirmation .modal-body span{
+    color: white;
+    font-size: 20px;
+    margin-bottom: 100px;
+    
+}
+.confirmation .modal-body .buttons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.confirmation .modal-body .buttons button{
+    padding: 5px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(250, 250, 250, 0.425);
 }
 
 @media screen and (max-width: 766px){
