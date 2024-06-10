@@ -24,3 +24,4 @@ Route::post('/apartment/{id}/paid', [BillsController::class, 'paidstatus'])->nam
 Route::post('/apartment/{id}/delete', [BillsController::class, 'delete'])->name('delete');
 Route::get('/soloprint/{id}', 'App\Http\Controllers\PDFController@soloprint')->name('soloprint');
 Route::post('/pdf', 'App\Http\Controllers\PDFController@generatePDF')->name('pdf');
+Route::post('/computation/latest', [BillsController::class, 'getLastReading'])->name('getLastReading');

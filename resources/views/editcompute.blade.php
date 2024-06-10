@@ -12,7 +12,7 @@
                 @method('post')
                 <input type="hidden" name="id" value="{{ $edit->id }}">
                 <div class="upper">
-                    <select name="name" required disabled>
+                    <select name="name" required>
                         <option selected value="{{ $edit->name }}">{{ $edit->name }}</option>
                         {{-- <option value="Apartment 1">Apartment 1</option>
                         <option value="Apartment 2">Apartment 2</option>
@@ -22,9 +22,9 @@
                         $totalkwh = abs($edit->latest_reading - $edit->last_reading);
                         $numonth = $edit->month;
                     @endphp
-                    <select name="month" required disabled>
+                    <select name="month" required >
                         <option selected value="{{ $numonth }}">{{ $edit->month }}</option>
-                        {{-- <option value="1">january</option>
+                        <option value="1">january</option>
                         <option value="2">february</option>
                         <option value="3">march</option>
                         <option value="4">april</option>
@@ -35,7 +35,7 @@
                         <option value="9">september</option>
                         <option value="10">october</option>
                         <option value="11">november</option>
-                        <option value="12">december</option> --}}
+                        <option value="12">december</option>
                     </select>
                     <input name="due" type="date" required value="{{ $edit->due }}">
                     <input name="bill" type="number" required placeholder="Bill" value="{{ $edit->bill }}">

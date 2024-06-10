@@ -100,3 +100,25 @@
         <a class="print" href="{{ route('print') }}">PRINT</a>
     </section>
 @endsection
+{{-- <script>
+    $(document).ready(function() {
+        $('select[name="name"]').change(function() {
+            var apartment = $(this).val();
+            $.ajax({
+                url: "{{ route('getLastReading') }}",
+                method: 'POST',
+                data: {
+                    apartment: apartment,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    if (response.success) {
+                        $('input[name="R1"]').val(response.lastReading);
+                    } else {
+                        alert(response.message);
+                    }
+                }
+            });
+        });
+    });
+</script> --}}

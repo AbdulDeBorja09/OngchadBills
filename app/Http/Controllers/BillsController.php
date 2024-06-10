@@ -232,7 +232,20 @@ class BillsController extends Controller
         $now = date('F d Y');
         $existingBill = Compute::where('name', $name)->where('month', $month)->first();
         if ($existingBill) {
-            return redirect()->back()->with('error',  __('validation.computeerror'));
+            $latestRecord = Compute::where('name', $name)->where('month', $month)->latest('id')->first();
+            if ($latestRecord) {
+                Compute::where('id', $latestRecord->id)->update([
+                    'month' => $month,
+                    'bill' => $bill,
+                    'due' => $due,
+                    'kwh' => $kwh,
+                    'last_reading' => $R1,
+                    'latest_reading' => $R2,
+                    'total' => $total,
+                    'updated' => $now,
+                ]);
+            return redirect()->back()->with('error',  __('validation.computeupdt'));
+            }
         } else {
             Compute::create([
                 'name' => $name,
@@ -263,4 +276,15 @@ class BillsController extends Controller
             ->get();
         return view('print', compact('latestApartments'));
     }
+
+    // public function getLastReading(Request $request){
+    //     $apartment = $request->input('name');
+    //     $lastReading = Compute::where('name', $apartment)->orderBy('updated', 'desc')->first();
+        
+    //     if ($lastReading) {
+    //         return response()->json(['success' => true, 'lastReading' => $lastReading->reading]);
+    //     }
+
+    //     return response()->json(['success' => false, 'message' => 'No readings found']);
+    // }
 }

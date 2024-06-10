@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'computeupdt' => 'Bill updated',
     'computesucess' => 'Bill added successfully',
     'computeerror' => 'Bill already added',
     'noresult' => 'No result found',
